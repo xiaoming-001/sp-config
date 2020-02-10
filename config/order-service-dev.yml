@@ -1,11 +1,14 @@
-
 spring:
   application:
     name: order-service
-    
-server:
-  port: 8201
+  cloud:
+    config:
+      override-none: true
 
+
+server:
+  port: 8201  
+  
 eureka:
   client:
     service-url:
@@ -20,7 +23,4 @@ management:
     web:
       exposure:
         include: hystrix.stream
-spring:
-  cloud:
-    config:
-      override-none: true
+        
